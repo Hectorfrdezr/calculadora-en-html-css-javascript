@@ -109,3 +109,11 @@ button{
 
     }
 }
+@media (max-width:628px){
+    .container{
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: auto;
+    }
+}  
