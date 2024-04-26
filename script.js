@@ -13,6 +13,9 @@ buttons.forEach((item) => {
         }else if(display.innerText == "" && item.id == "equal"){
             display.innerText="null";
             setTimeout(()=>(display.innerText = ""),800);
+        }else if(display.innerText == "" && item.classList == "btn-operator"){
+            display.innerText="";
+            setTimeout(()=>(display.innerText=""),500);
         }else{
             display.innerText+= item.id;
         }
