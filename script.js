@@ -12,9 +12,21 @@ buttons.forEach((item) => {
             display.innerText = eval(display.innerText);
         }else if(display.innerText == "" && item.id == "equal"){
             display.innerText="null";
-            setTimeout(()=>(display.innerText = ""),2000);
+            setTimeout(()=>(display.innerText = ""),800);
         }else{
             display.innerText+= item.id;
         }
     }
 }) 
+
+
+const themeToggglerBtn = document.querySelector(".theme-toggler");
+const calculator = document.querySelector(".calculator");
+// const togglerIcon = document.querySelector("toggler-icon");
+
+let isDark = true;
+themeToggglerBtn.onclick=()=>{
+    calculator.classList.toggle("dark");
+    themeToggglerBtn.classList.toggle("active");
+    inDark =! isDark;
+}
