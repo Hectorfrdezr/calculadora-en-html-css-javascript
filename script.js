@@ -25,7 +25,6 @@ buttons.forEach((item) => {
 
 const themeToggglerBtn = document.querySelector(".theme-toggler");
 const calculator = document.querySelector(".calculator");
-// const togglerIcon = document.querySelector("toggler-icon");
 
 let isDark = true;
 themeToggglerBtn.onclick=()=>{

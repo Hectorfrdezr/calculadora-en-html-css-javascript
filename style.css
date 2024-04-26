@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 body{
     background:linear-gradient(45deg,#f342f3,#a34);  
@@ -21,10 +21,10 @@ body{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgb(187,130,130);
-    background-color: rgb(147, 101, 246);
+    background-color: rgb(239, 237, 244);
     #display{
         color: rgb(12, 14, 9);
-        background-color: rgba(193, 10, 10, 0.84);
+        background-color: rgba(186, 193, 224, 0.84);
         margin: 0 10px;
         height: 80px;
         border-radius: 5px;
@@ -43,7 +43,7 @@ body{
     }
     .btn-number{
         background-color: blueviolet;
-        color: aliceblue;
+        color: rgb(21, 22, 22);
     }
     .btn-operator{
         background-color: rgb(208, 234, 62);
@@ -66,14 +66,26 @@ body{
             height: 80px;
             margin-top: 30px;
         }
-        
-    }
+        .btn-number{
+            background-color: blueviolet;
+            color: rgb(236, 240, 240);
+        }
+        .theme-toggler{
+            &::before{
+                background-color: azure;
+            }
+        }
+        .btn-operator{
+                background-color: rgb(43, 226, 70);
+                color: rgb(21, 22, 22);
+            }
+
 }
 .theme-toggler{
     position: absolute;
     top: 3px;
     right: 30px;
-    color: aliceblue;
+    color: rgb(251, 253, 255);
     cursor: pointer;
     z-index: 1;
     &::before{
@@ -84,7 +96,7 @@ body{
         top: 15%;
         transform: translate(-50%,50%);
         border-radius: 50%;
-        background-color: rgba(227, 244, 228, 0.989);
+        background-color: rgba(71, 83, 72, 0.989);
         z-index: 1;
     }
 }
@@ -108,6 +120,7 @@ button{
         transform: scale(1.1);
 
     }
+}
 }
 @media (max-width:628px){
     .container{
