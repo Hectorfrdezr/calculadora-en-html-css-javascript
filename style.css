@@ -5,128 +5,62 @@
     font-family: monospace;
 }
 body{
-    background:linear-gradient(45deg,#f342f3,#a34);  
+    background-color: rgb(0, 91, 91);
 }
 .container{
     display: flex;
-    width: 80%;
-    height: 100vh;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 .calculator{
-    position:relative;
-    height: auto;
-    width: auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgb(187,130,130);
-    background-color: rgb(239, 237, 244);
-    #display{
-        color: rgb(12, 14, 9);
-        background-color: rgba(186, 193, 224, 0.84);
-        margin: 0 10px;
-        height: 80px;
-        border-radius: 5px;
-        margin-top: 30px;
-        width: auto;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        font-size: 30px;
-        margin-bottom: 25px;
-        font-weight: 600;
-    }
-    #clear{
-        background-color: aquamarine;
-        color: #f342f3;
-    }
-    .btn-number{
-        background-color: blueviolet;
-        color: rgb(21, 22, 22);
-    }
-    .btn-operator{
-        background-color: rgb(208, 234, 62);
-        color: black;
-    }
-    .btn-equal{
-        background-color: #a34;
-        color: black;
-    }
-    #equal{
-        height: 130px;
-
-    }
-    &.dark{
-        background-color: black;
-        #display{
-            color: rgb(10, 11, 11);
-            background-color: rgb(193, 225, 51);
-            border-radius: 5px;
-            height: 80px;
-            margin-top: 30px;
-        }
-        .btn-number{
-            background-color: blueviolet;
-            color: rgb(236, 240, 240);
-        }
-        .theme-toggler{
-            &::before{
-                background-color: azure;
-            }
-        }
-        .btn-operator{
-                background-color: rgb(43, 226, 70);
-                color: rgb(21, 22, 22);
-            }
-
-}
-.theme-toggler{
-    position: absolute;
-    top: 3px;
-    right: 30px;
-    color: rgb(251, 253, 255);
-    cursor: pointer;
-    z-index: 1;
-    &::before{
-        content: "";
-        position: absolute;
-        height: 25px;
-        width: 30px;
-        top: 15%;
-        transform: translate(-50%,50%);
-        border-radius: 50%;
-        background-color: rgba(71, 83, 72, 0.989);
-        z-index: 1;
-    }
-}
-.theme-toggler .active{
-    color: burlywood;
-    &::before{
-        background-color: aliceblue;
-    }
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: 160px repeat(5, 75px);
+    background-color: rgb(45, 44, 44);
+    padding: 15px;
+    border-radius: 35px;
+    box-shadow: 15px 10px 0px 5px #00000036;
 }
 button{
-    height: 60px;
-    width: 60px;
-    border: 0;
-    border-radius: 30px;
-    margin: 5px;
-    font-weight: 600;
-    font-size: 20px;
     cursor: pointer;
-    transition: all 0.2 ease;
-    &:hover{
-        transform: scale(1.1);
-
-    }
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: rgb(45, 44, 44);
+    box-shadow: 5px 5px 10px -3px #23232300, -5px -5px 15px 3px #00000036;
+    color: aliceblue;
 }
+button:active{
+    background-color:rgb(23,23, 23) ;
 }
-@media (max-width:628px){
-    .container{
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: auto;
+button:focus{
+    outline: none;
+}
+.display{
+    grid-column: 1/-1;
+    background-color: rgb(22, 22, 24);
+    padding: 16px;
+    display: flex;
+    margin: 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fff;
+    text-align: right;
+    justify-content: space-between;
+    word-break: break-all;
+    box-shadow: 0px 0px 0px 10px #00000036;
+    border-radius: 5px;
+    font-weight: 600;
+}
+#valor-anterior{
+        font-size: 16px;
     }
-}  
+#valor-actual{
+    font-size: 30px;
+}
+.col-2{
+    grid-column: span 2;
+}
