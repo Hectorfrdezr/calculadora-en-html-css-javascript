@@ -6,6 +6,7 @@ const backspace = document.querySelector(`.col-1`);
 const clear = document.querySelector(`.col-2`);
 
 
+
 const display = new Display(displayValoranAnterior, displayValorActual);
 
 bntNumero.forEach(boton =>{
@@ -16,7 +17,7 @@ backspace.addEventListener(`click`, () => display.borrar());
 clear.addEventListener(`click`,() =>display.borrarTodo());
 
 bntOperador.forEach(boton => {
-    boton.addEventListener(`click`, () => display.resolver(boton.value));
+    boton.addEventListener(`click`, () => display.computar(boton.value));
 })
 
 

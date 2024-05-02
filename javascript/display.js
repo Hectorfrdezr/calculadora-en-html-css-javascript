@@ -4,7 +4,14 @@ class Display{
         this.displayValorActual = displayValorActual;
         this.calculador = new Calculadora();
         this.valorActual= ``;
+        this.tipoOperacion = undefined;
         this.valorAnterior= ``;
+        this.signos = {
+            sumar: `+`,
+            restar: `-`,
+            dividir: `/`,
+            multiplicar: `*`,
+        }
     }
     addNumero(numero){
         if(numero === `.`&& this.valorActual.includes(`.`))return
@@ -13,7 +20,7 @@ class Display{
     }
     imprimirValores(){
         this.displayValorActual.textContent = this.valorActual;
-        this.displayValorAnterior.textContent = this.valorAnterior;
+        this.displayValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] || ``}`;
     }
     borrar(){
         this.valorActual = this.valorActual.toString().slice(0, -1);
@@ -31,9 +38,12 @@ class Display{
 
         if(isNaN(valorActual) || isNaN(valorAnterior)) return;
         this.valorActual = this.calculador(this.tipoOperacion)(valorAnterior, valorActual);
-
     }
-    resolver(tipo){
-        this.tipoOperacion !== 
-    }
+   computar(tipo){
+    this.tipoOperacion !== `igual` && this.calcular();
+    this.tipoOperacion = tipo;
+    this.valorAnterior = this.valorActual || this.valorAnterior;
+    this.valorActual = ``;
+    this.imprimirValores();
+   }
 }
