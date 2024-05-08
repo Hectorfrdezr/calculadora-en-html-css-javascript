@@ -61,6 +61,7 @@ button:focus{
 #valor-actual{
     font-size: 30px;
 }
-.col-2{
+.col-2,
+#equal{
     grid-column: span 2;
 }
